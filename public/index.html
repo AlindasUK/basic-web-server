@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Button Press Example</title>
+  <title>User Input Example</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Press the button!</h1>
-  <button id="pressButton">Press Me</button>
-  <p id="outputMessage"></p>
+  <h1>Enter your username and message:</h1>
+  <input type="text" id="usernameInput" placeholder="Your username...">
+  <input type="text" id="userInput" placeholder="Type your message...">
+  <button id="pressButton">Send</button>
+  <div id="messageContainer"></div>
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>

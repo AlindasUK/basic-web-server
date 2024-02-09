@@ -20,22 +20,10 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   console.log('A user connected');
 
-  // Handle buttonClick event from the client
-  socket.on('buttonClick', () => {
-    // Make a request to the server when the button is clicked
-    const startTime = new Date();
-
-    // Simulate some processing time (you can replace this with your actual processing logic)
-    setTimeout(() => {
-      const endTime = new Date();
-      const duration = endTime - startTime;
-
-      console.log('Button Pressed on the Server!');
-      console.log(`Processing time: ${duration} milliseconds`);
-
-      // Broadcast the processing time to all connected clients
-      io.emit('buttonPressed', `Button Pressed! Processing time: ${duration} milliseconds`);
-    }, );
+  // Handle userMessage event from the client
+  socket.on('userMessage', (data) => {
+    // Broadcast the user's message with username to all connected clients
+    io.emit('displayMessage', { username: data.username, message: data.message });
   });
 
   // Handle disconnect

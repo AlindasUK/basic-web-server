@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "randomcolor": "^0.6.2",
     "socket.io": "^4.7.4",
     "ws": "^8.16.0"
   }

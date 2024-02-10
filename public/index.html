@@ -7,11 +7,14 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Enter your username and message:</h1>
-  <input type="text" id="usernameInput" placeholder="Your username...">
-  <input type="text" id="userInput" placeholder="Type your message...">
-  <button id="pressButton">Send</button>
-  <div id="messageContainer"></div>
+  <div id="chatContainer">
+    <div id="messageContainer"></div>
+  </div>
+  <div id="inputContainer">
+    <input type="text" id="usernameInput" placeholder="Your username...">
+    <input type="text" id="userInput" placeholder="Type your message...">
+    <button id="pressButton">Send</button>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>

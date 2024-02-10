@@ -11,7 +11,6 @@ $(document).ready(() => {
     socket.emit('userMessage', { username, message: userInput });
 
     // Clear the input fields after sending the message
-    $('#usernameInput').val('');
     $('#userInput').val('');
   });
 

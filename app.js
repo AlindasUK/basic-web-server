@@ -1,5 +1,6 @@
 const express = require('express');
 const http = require('http');
+const { message } = require('prompt');
 const socketIO = require('socket.io');
 
 const app = express();
@@ -21,10 +22,18 @@ io.on('connection', (socket) => {
   console.log('A user connected');
 
   // Handle userMessage event from the client
-  socket.on('userMessage', (data) => {
-    // Broadcast the user's message with username to all connected clients
+// Handle userMessage event from the client
+socket.on('userMessage', (data) => {
+  // Check if both username and message are provided
+  if (data && data.username && data.message) {
+    // If valid, emit the displayMessage event
     io.emit('displayMessage', { username: data.username, message: data.message });
-  });
+  } else {
+    // If not valid, you can optionally handle the case or log an error
+    console.log('Invalid message received:', data);
+  }
+});
+
 
   // Handle disconnect
   socket.on('disconnect', () => {

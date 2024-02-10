@@ -29,8 +29,6 @@ socket.on('userMessage', (data) => {
     // If valid, emit the displayMessage event
     io.emit('displayMessage', { username: data.username, message: data.message });
   } else {
-    // If not valid, you can optionally handle the case or log an error
-    console.log('Invalid message received:', data);
   }
 });
 
